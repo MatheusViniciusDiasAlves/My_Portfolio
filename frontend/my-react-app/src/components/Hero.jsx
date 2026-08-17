@@ -1,22 +1,33 @@
+import CubeBackground from "./CubeBackground";
+
 function Hero() {
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center bg-slate-950 text-white">
+    <section className="relative min-h-screen bg-black text-white flex flex-col items-center justify-center px-6">
 
-      <p className="text-lg text-slate-400">
-        Eae!!!, eu sou
-      </p>
+      <CubeBackground />
 
-      <h1 className="text-6xl font-bold mt-2">
-        Matheus Vinicius 
-      </h1>
+      <div className="relative z-10 text-center">
 
-      <p className="text-xl text-slate-300 mt-4">
-        Analista e Desenvolvedor de Sistemas
-      </p>
+        <p className="text-lg text-slate-400">
+          Olá, eu sou
+        </p>
 
-      <p className="text-slate-400 mt-2">
-        Desenvolvedor focado em Full-Stack
-      </p>
+        <h1 className="text-5xl md:text-7xl font-bold mt-2">
+          Matheus Dias
+        </h1>
+
+        <h2 className="text-xl md:text-2xl text-slate-300 mt-4">
+          Analista e Desenvolvedor de Sistemas
+        </h2>
+
+        <p className="text-slate-400 max-w-xl mt-4">
+          Desenvolvedor focado em Front-end e apaixonado
+          por tecnologia.
+        </p>
+    
+    
+
+      </div>
 
     </section>
   );

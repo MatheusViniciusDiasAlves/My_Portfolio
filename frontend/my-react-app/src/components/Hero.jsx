@@ -21,8 +21,7 @@ function Hero() {
         </h2>
 
         <p className="text-slate-400 max-w-xl mt-4">
-          Desenvolvedor focado em Front-end e apaixonado
-          por tecnologia.
+          Desenvolvedor focado em Full-Stack
         </p>
     
     

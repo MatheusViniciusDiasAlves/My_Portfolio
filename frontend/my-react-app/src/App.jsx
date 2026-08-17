@@ -1,8 +1,12 @@
 import Hero from "./components/Hero";
+import Projetos from "./components/Projetos";
 
 function App(){
     return(
-       <Hero/>
+        <>
+       <Hero />
+       <Projetos />
+    </> 
     );
 }
 

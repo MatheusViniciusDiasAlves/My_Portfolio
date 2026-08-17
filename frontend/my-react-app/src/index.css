@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+/* Fundo base preto: sem isso, o buraco da máscara do CubeBackground
+   deixa vazar o branco da página (o "brilhão" no centro). */
+html,
+body {
+  background-color: #000000;
+}

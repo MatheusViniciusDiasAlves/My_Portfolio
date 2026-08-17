@@ -538,13 +538,13 @@ function CubeBackground() {
       aria-hidden="true"
       className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
       style={{
-        margin: 0,
-        font: '4px/4.6px Consolas, "DejaVu Sans Mono", ui-monospace, monospace',
-        color: "#FFFFFF",
-        whiteSpace: "pre",
-        background: "#000000",
-        maskImage:
-          "radial-gradient(110% 80% at 50% 42%, transparent 0 18%, #000 56%)"
+         margin: 0,
+    font: '4px/4.6px Consolas, "DejaVu Sans Mono", ui-monospace, monospace',
+    color: "rgba(255, 255, 255, 0.35)",
+    whiteSpace: "pre",
+    background: "#000000",
+    maskImage:
+        "radial-gradient(110% 80% at 50% 42%, transparent 0 18%, #000 56%)"
       }}
     />
   );

@@ -1,21 +1,10 @@
-function Projeto({ ____, ____ }) {        // as duas props
-  return (
-    <div>
-      <h2>{ ____ }</h2>
-      <p>{ ____ }</p>
-    </div>
-  );
+import Hero from "./components/Hero";
+
+function App(){
+    return(
+       <Hero/>
+    );
 }
 
-function App() {
-  return (
-    <___>                                  {/* UM elemento raiz */}
-      <h1>Matheus Vinicius Dias Alves</h1>
+export default App; 
 
-      <Projeto titulo="____" tecnologias="____" />
-      {/* mais duas vezes, com valores diferentes */}
-    </___>
-  );
-}
-
-export default App;

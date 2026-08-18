@@ -536,7 +536,7 @@ function CubeBackground() {
     <pre
       ref={backgroundRef}
       aria-hidden="true"
-      className="fixed inset-0 z-0 pointer-events-none overflow-hidden"
+      className="fixed inset-0 -z-10 pointer-events-none overflow-hidden"
       style={{
          margin: 0,
     font: '4px/4.6px Consolas, "DejaVu Sans Mono", ui-monospace, monospace',

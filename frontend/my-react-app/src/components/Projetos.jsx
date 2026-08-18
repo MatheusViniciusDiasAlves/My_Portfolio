@@ -4,27 +4,27 @@ function Projetos() {
 
     const projetos = [
         {
+            nome: "Projeto DOM com JS",
+            descricao:
+                "Primeiro projeto feito com JavaScript manipulando DOM com vitrine de carros.",
+            tecnologias: ["JavaScript", "HTML", "CSS", "Bootstrap"],
+            imagem: "/demonstrativos/2026-08-18-11-04-43.gif",
+        },
+
+        {
             nome: "Lista de Tarefas",
             descricao:
-                "Aplicação de lista de tarefas desenvolvida durante meus estudos de JavaScript.",
-            tecnologia: "JavaScript",
-            imagem: "/projetos/lista-tarefas.webp",
+                "Sistema de cadastramento de usuário utilizando Node.js e MySQL. Também fiz a camada de proteção com HASH no projeto",
+            tecnologias: ["React", "Node.js", "MySQL"],
+            imagem: "/demonstrativos/2026-08-18-17-17-57.gif",
         },
 
         {
-            nome: "Sistema de Login",
+            nome: "Lista de Tarefas em LocalStorage",
             descricao:
-                "Sistema de autenticação desenvolvido com React, Node.js e MySQL.",
-            tecnologia: "React",
-            imagem: "/projetos/sistema-login.webp",
-        },
-
-        {
-            nome: "Meu Portfólio",
-            descricao:
-                "Meu portfólio pessoal desenvolvido utilizando React e Tailwind CSS.",
-            tecnologia: "React",
-            imagem: "/projetos/portfolio.webp",
+                "Após aprender sobre armazenamento, aprofundei meus conhecimentos em LocalStorage.",
+            tecnologias: ["HTML", "Tailwind CSS", "JavaScript"],
+            imagem: "/demonstrativos/2026-08-18-16-40-46.gif",
         },
     ];
 
@@ -51,7 +51,7 @@ function Projetos() {
                             key={projeto.nome}
                             nome={projeto.nome}
                             descricao={projeto.descricao}
-                            tecnologia={projeto.tecnologia}
+                            tecnologias={projeto.tecnologias}
                             imagem={projeto.imagem}
                         />
                     ))}

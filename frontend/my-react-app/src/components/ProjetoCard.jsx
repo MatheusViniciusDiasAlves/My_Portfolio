@@ -45,22 +45,26 @@ function ProjetoCard(props) {
                     {props.descricao}
                 </p>
 
-                <div className="flex gap-2 mt-5">
+                {/* Tecnologias */}
+                <div className="flex flex-wrap gap-2 mt-5">
 
-                    <span
-                        className="
-                            px-3
-                            py-1
-                            bg-slate-800/90
-                            border
-                            border-slate-700
-                            rounded-full
-                            text-sm
-                            text-slate-200
-                        "
-                    >
-                        {props.tecnologia}
-                    </span>
+                    {props.tecnologias.map((tecnologia) => (
+                        <span
+                            key={tecnologia}
+                            className="
+                                px-3
+                                py-1
+                                bg-slate-800/90
+                                border
+                                border-slate-700
+                                rounded-full
+                                text-sm
+                                text-slate-200
+                            "
+                        >
+                            {tecnologia}
+                        </span>
+                    ))}
 
                 </div>
 

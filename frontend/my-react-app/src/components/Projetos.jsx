@@ -42,6 +42,13 @@ function Projetos() {
             imagem: "/demonstrativos/2026-08-19-12-10-06.gif",
         },
 
+          {
+            nome: "Minha Loja Virtual" ,
+            descricao: "Eu estava começando a tentar desenvolver meu próprio site, porquê eu estava fazendo formatações de computadores" ,
+            tecnologias: ["HTML", "JS", "CSS"],
+            imagem: "/demonstrativos/2026-08-19-12-18-11.gif",
+        },
+
     ];
 
     return (

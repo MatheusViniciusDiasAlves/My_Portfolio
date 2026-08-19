@@ -61,7 +61,6 @@ function Hero() {
               alt="Foto de Matheus Vinicius"
               className="w-full h-full object-cover object-center"
             />
-
           </div>
 
         </div>

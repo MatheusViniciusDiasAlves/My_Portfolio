@@ -34,6 +34,14 @@ function Projetos() {
             imagem: "/demonstrativos/2026-08-19-11-59-10.gif",
         },
 
+        
+        {
+            nome: "Calculadora em JS" ,
+            descricao: "Projetei uma calculadora web, inspirado no Iphone" ,
+            tecnologias: ["HTML", "JS", "CSS"],
+            imagem: "/demonstrativos/2026-08-19-12-10-06.gif",
+        },
+
     ];
 
     return (

@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Hero />
       <Sobre />
-    
+      <Tecnologias />
       <Projetos />
       <Jornada />
       <Contato />

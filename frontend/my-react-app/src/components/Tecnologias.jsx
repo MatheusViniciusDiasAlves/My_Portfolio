@@ -2,44 +2,69 @@ import {
     SiHtml5,
     SiCss,
     SiJavascript,
+    SiTypescript,
     SiReact,
+    SiBootstrap,
     SiTailwindcss,
     SiNodedotjs,
-    SiMysql
+    SiPython,
+    SiMysql,
+    SiPostgresql,
+    SiDocker,
+    SiLinux,
+    SiKalilinux,
+    SiGit,
+    SiNetlify,
+    SiClaude,
+    SiGooglegemini,
+    SiFigma
 } from "react-icons/si";
+import { RiOpenaiFill } from "react-icons/ri";
+import { DiMsqlServer, DiPhotoshop } from "react-icons/di";
+import { GrOracle } from "react-icons/gr";
+import { VscVscode, VscAzure } from "react-icons/vsc";
+import {
+    TbBrandAdobeXd,
+    TbBrandAdobePremiere,
+    TbBrandAdobeAfterEffect,
+    TbBrandPowershell
+} from "react-icons/tb";
+import { FaWindows } from "react-icons/fa";
 
 
 function Tecnologias() {
 
     const tecnologias = [
-        {
-            nome: "HTML",
-            icone: SiHtml5
-        },
-        {
-            nome: "CSS",
-            icone: SiCss3
-        },
-        {
-            nome: "JavaScript",
-            icone: SiJavascript
-        },
-        {
-            nome: "React",
-            icone: SiReact
-        },
-        {
-            nome: "Tailwind CSS",
-            icone: SiTailwindcss
-        },
-        {
-            nome: "Node.js",
-            icone: SiNodedotjs
-        },
-        {
-            nome: "MySQL",
-            icone: SiMysql
-        }
+        { nome: "HTML", icone: SiHtml5 },
+        { nome: "CSS", icone: SiCss },
+        { nome: "JavaScript", icone: SiJavascript },
+        { nome: "TypeScript", icone: SiTypescript },
+        { nome: "React", icone: SiReact },
+        { nome: "Bootstrap", icone: SiBootstrap },
+        { nome: "Tailwind CSS", icone: SiTailwindcss },
+        { nome: "Node.js", icone: SiNodedotjs },
+        { nome: "Python", icone: SiPython },
+        { nome: "MySQL", icone: SiMysql },
+        { nome: "PostgreSQL", icone: SiPostgresql },
+        { nome: "SQL Server", icone: DiMsqlServer },
+        { nome: "Oracle", icone: GrOracle },
+        { nome: "Docker", icone: SiDocker },
+        { nome: "Linux", icone: SiLinux },
+        { nome: "Kali Linux", icone: SiKalilinux },
+        { nome: "Git", icone: SiGit },
+        { nome: "VS Code", icone: VscVscode },
+        { nome: "Netlify", icone: SiNetlify },
+        { nome: "ChatGPT", icone: RiOpenaiFill },
+        { nome: "Claude Code", icone: SiClaude },
+        { nome: "Gemini", icone: SiGooglegemini },
+        { nome: "Figma", icone: SiFigma },
+        { nome: "Adobe XD", icone: TbBrandAdobeXd },
+        { nome: "Photoshop", icone: DiPhotoshop },
+        { nome: "Premiere Pro", icone: TbBrandAdobePremiere },
+        { nome: "After Effects", icone: TbBrandAdobeAfterEffect },
+        { nome: "Windows 11", icone: FaWindows },
+        { nome: "PowerShell", icone: TbBrandPowershell },
+        { nome: "Azure", icone: VscAzure }
     ];
 
 
@@ -65,7 +90,7 @@ function Tecnologias() {
                     grid-cols-2
                     sm:grid-cols-3
                     md:grid-cols-4
-                    lg:grid-cols-7
+                    lg:grid-cols-6
                     gap-4
                     mt-12
                 ">

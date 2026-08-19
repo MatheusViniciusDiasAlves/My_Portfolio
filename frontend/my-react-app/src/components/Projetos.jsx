@@ -26,6 +26,14 @@ function Projetos() {
             tecnologias: ["HTML", "Tailwind CSS", "JavaScript"],
             imagem: "/demonstrativos/2026-08-18-16-40-46.gif",
         },
+
+        {
+            nome: "SpinningCube" ,
+            descricao: "Desenvolvi um SpinningCube, utilizando HTML com ClaudeCode" ,
+            tecnologias: ["HTML", "ClaudeCode", "IA"],
+            imagem: "/demonstrativos/2026-08-19-11-59-10.gif",
+        },
+
     ];
 
     return (

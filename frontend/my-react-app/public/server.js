@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
         mensagem: "API funcionando!"
     });
 });
-]
+
 const PORT = 3000;
 
 app.listen(PORT, () => {

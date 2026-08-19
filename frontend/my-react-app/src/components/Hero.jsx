@@ -2,7 +2,7 @@ import CubeBackground from "./CubeBackground";
 
 function Hero() {
   return (
-    <section className="relative z-10 min-h-screen flex items-center px-6 py-20 text-white">
+    <section id="inicio" className="relative z-10 min-h-screen flex items-center px-6 py-20 text-white">
 
     <CubeBackground />
 

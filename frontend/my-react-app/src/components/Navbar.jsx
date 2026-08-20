@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Login from "./Login";
 
 function Navbar() {
 
     const [menuAberto, setMenuAberto] = useState(false);
+    const [mostrarLogin, setMostrarLogin] = useState(false);
 
     return (
         <nav className="
@@ -62,6 +64,13 @@ function Navbar() {
                     <a href="#contato" className="text-slate-300 hover:text-white transition">
                         Contato
                     </a>
+
+                    <button
+                        onClick={() => setMostrarLogin(true)}
+                        className="rounded-lg border border-slate-700 px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-white transition"
+                    >
+                        Login
+                    </button>
 
                 </div>
 
@@ -137,9 +146,18 @@ function Navbar() {
                         Contato
                     </a>
 
+                    <button
+                        onClick={() => { setMenuAberto(false); setMostrarLogin(true); }}
+                        className="text-left text-slate-300 hover:text-white"
+                    >
+                        Login
+                    </button>
+
                 </div>
 
             )}
+
+            {mostrarLogin && <Login aoFechar={() => setMostrarLogin(false)} />}
 
         </nav>
     );

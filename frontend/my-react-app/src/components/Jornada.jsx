@@ -2,10 +2,10 @@ function Jornada() {
 
     const jornada = [
         {
-            ano: "2025",
-            titulo: "Início da faculdade",
+            ano: "2021",
+            titulo: "Curso de Manutenção de Computadores e Celulares",
             descricao:
-                "Comecei minha graduação em Análise e Desenvolvimento de Sistemas e comecei a aprofundar meus conhecimentos em programação.",
+                "Aprendi sobre formatação de computadores, manutenção, instalação de softwares que aprofundou meus conhecimentos!",
         },
         {
             ano: "2025",

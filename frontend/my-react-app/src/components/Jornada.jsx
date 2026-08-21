@@ -2,34 +2,34 @@ function Jornada() {
 
     const jornada = [
         {
-            ano: "2021",
+            ano: "2021-2022",
             titulo: "Curso de Manutenção de Computadores e Celulares",
             descricao:
                 "Aprendi sobre formatação de computadores, manutenção, instalação de softwares que aprofundou meus conhecimentos!",
         },
         {
-            ano: "2025",
+            ano: "2024",
             titulo: "Primeiros projetos",
             descricao:
                 "Comecei a colocar meus conhecimentos em prática criando pequenos projetos para desenvolver minha lógica de programação.",
         },
         {
-            ano: "2026",
-            titulo: "JavaScript e desenvolvimento Web",
+            ano: "2025",
+            titulo: "Análise e Desenvolvimento de Sistemas",
             descricao:
-                "Passei a estudar JavaScript de forma mais aprofundada, trabalhando com funções, arrays, eventos, DOM e armazenamento de dados.",
+                "Comecei minha graduação na Universidade Anhanguera",
         },
         {
             ano: "2026",
-            titulo: "React, Node.js e MySQL",
+            titulo: "Emprego",
             descricao:
-                "Comecei a estudar React no frontend e também Node.js, Express e MySQL para entender o desenvolvimento de aplicações completas.",
+                "Conquistei minha Vaga como Auxiliar da Tecnologia de Informação e Desenvolvimento de Sistemas",
         },
         {
             ano: "Atual",
-            titulo: "Construindo meu portfólio",
+            titulo: "Construindo minha carreira",
             descricao:
-                "Estou desenvolvendo este portfólio para colocar meus projetos em prática e continuar evoluindo como desenvolvedor.",
+                "Sigo aprendendo cada dia mais sobre a área de Tecnologia",
         },
     ];
 

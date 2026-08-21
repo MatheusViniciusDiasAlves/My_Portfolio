@@ -11,7 +11,7 @@ function Contato() {
 
         <div className="flex flex-wrap justify-center gap-4 mt-10">
           <a
-            href="mailto:seuemail@gmail.com"
+            href="mailto:matheusviniciusdiasalves@gmail.com"
             className="
                             px-6 py-3
                             rounded-lg
@@ -26,7 +26,7 @@ function Contato() {
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/MatheusViniciusDiasAlves"
             target="_blank"
             rel="noopener noreferrer"
             className="
@@ -42,7 +42,7 @@ function Contato() {
           </a>
 
           <a
-            href="https://linkedin.com/"
+            href="https://www.linkedin.com/in/matheusviniciusdiasalves/"
             target="_blank"
             rel="noopener noreferrer"
             className="

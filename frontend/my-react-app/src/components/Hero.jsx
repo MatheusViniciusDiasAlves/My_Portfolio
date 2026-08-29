@@ -11,6 +11,7 @@ function Hero() {
         {/* TEXTO */}
         <div>
 
+          {/* TODO (Matheus): ajuste a saudação e o texto abaixo com as suas palavras */}
           <p className="text-slate-400 text-lg mb-3">
             Olá, eu sou
           </p>

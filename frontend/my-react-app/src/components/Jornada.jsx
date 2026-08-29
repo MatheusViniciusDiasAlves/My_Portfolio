@@ -1,5 +1,6 @@
 function Jornada() {
 
+    // TODO (Matheus): sua trajetória — ajuste os anos, títulos e descrições com as suas palavras
     const jornada = [
         {
             ano: "2021-2022",

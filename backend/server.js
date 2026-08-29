@@ -3,7 +3,17 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const db = require("./db");
-require("dotenv").config({ path: __dirname + "/.env" });
+require("dotenv").config({ path: __dirname + "/.env", quiet: true });
+
+// Sem JWT_SECRET o jwt.sign() quebra e o login/cadastro viram erro 500.
+// Em produção ele DEVE vir do .env; aqui deixamos um valor de desenvolvimento
+// só para o projeto rodar sem configuração, com um aviso bem visível.
+if (!process.env.JWT_SECRET) {
+    process.env.JWT_SECRET = "dev-inseguro-troque-no-.env";
+    console.warn(
+        "[ATENÇÃO] JWT_SECRET não definido no .env — usando um valor de desenvolvimento. NÃO use assim em produção."
+    );
+}
 
 const app = express();
 
@@ -122,8 +132,9 @@ app.post("/api/cadastro", async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
+// 3333 é a porta que o frontend espera por padrão (ver frontend/.../Login.jsx).
+const PORT = process.env.PORT || 3333;
 
 app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

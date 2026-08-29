@@ -20,7 +20,8 @@ function Sobre() {
                             <img
                                 src="/projetos/MatheusDias.png"
                                 alt="Matheus Dias"
-                                className="w-full h-full object-contain"
+                                loading="lazy"
+                                className="w-full h-full object-cover object-center"
                             />
 
                         </div>
@@ -28,6 +29,7 @@ function Sobre() {
                     </div>
 
                     {/* TEXTO */}
+                    {/* TODO (Matheus): esta é a sua história — revise e escreva com as suas palavras */}
                     <div>
 
                         <h3 className="text-3xl font-bold">

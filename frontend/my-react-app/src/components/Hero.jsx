@@ -17,7 +17,7 @@ function Hero() {
           </p>
 
           <h1 className="text-5xl md:text-7xl font-bold">
-            Matheus Vinicius
+            Matheus Vinícius
           </h1>
 
           <h2 className="text-2xl md:text-3xl text-slate-300 mt-4">
@@ -25,9 +25,10 @@ function Hero() {
           </h2>
 
           <p className="text-slate-400 mt-6 max-w-xl text-lg leading-relaxed">
-            Desenvolvedor em formação, apaixonado por tecnologia e
-            desenvolvimento de sistemas. Atualmente trabalhando como
-            Auxiliar de Tecnologia da Informação e Desenvolvedor de Sistemas.
+            Sou <strong className="text-slate-300 font-semibold">Matheus Vinícius Dias Alves</strong>,
+            desenvolvedor full-stack em formação, apaixonado por tecnologia e
+            desenvolvimento de sistemas. Atualmente trabalho como Auxiliar de
+            Tecnologia da Informação e Desenvolvedor de Sistemas.
           </p>
 
           <div className="flex gap-4 mt-8">
@@ -59,7 +60,7 @@ function Hero() {
 
             <img
               src="/projetos/MatheusDias.png"
-              alt="Foto de Matheus Vinicius"
+              alt="Foto de Matheus Vinícius Dias Alves"
               width="384"
               height="384"
               fetchPriority="high"

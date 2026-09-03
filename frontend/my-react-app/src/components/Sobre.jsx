@@ -19,7 +19,7 @@ function Sobre() {
 
                             <img
                                 src="/projetos/MatheusDias.png"
-                                alt="Matheus Dias"
+                                alt="Matheus Vinícius Dias Alves"
                                 width="384"
                                 height="384"
                                 loading="lazy"
@@ -40,9 +40,10 @@ function Sobre() {
                         </h3>
 
                         <p className="text-slate-300 mt-6 leading-relaxed">
-                            Sou estudante de Análise e Desenvolvimento de
-                            Sistemas e estou construindo minha carreira na
-                            área de desenvolvimento de software.
+                            Sou o Matheus Vinícius Dias Alves, estudante de
+                            Análise e Desenvolvimento de Sistemas, e estou
+                            construindo minha carreira na área de
+                            desenvolvimento de software.
                         </p>
 
                         <p className="text-slate-300 mt-4 leading-relaxed">

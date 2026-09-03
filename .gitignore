@@ -1,0 +1,16 @@
+# dependências (cada subprojeto tem o seu node_modules)
+node_modules/
+**/node_modules/
+
+# variáveis de ambiente
+.env
+**/.env
+
+# build
+dist/
+**/dist/
+
+# logs e sistema
+*.log
+.DS_Store
+Thumbs.db

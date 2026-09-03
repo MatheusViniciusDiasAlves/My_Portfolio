@@ -11,6 +11,7 @@ function Hero() {
         {/* TEXTO */}
         <div>
 
+          {/* TODO (Matheus): ajuste a saudação e o texto abaixo com as suas palavras */}
           <p className="text-slate-400 text-lg mb-3">
             Olá, eu sou
           </p>
@@ -59,6 +60,10 @@ function Hero() {
             <img
               src="/projetos/MatheusDias.png"
               alt="Foto de Matheus Vinicius"
+              width="384"
+              height="384"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
           </div>

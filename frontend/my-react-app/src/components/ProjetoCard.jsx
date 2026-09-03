@@ -22,6 +22,10 @@ function ProjetoCard(props) {
                 <img
                     src={props.imagem}
                     alt={`Demonstração do projeto ${props.nome}`}
+                    width="1600"
+                    height="900"
+                    loading="lazy"
+                    decoding="async"
                     className="
                         w-full
                         h-full

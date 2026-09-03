@@ -7,7 +7,9 @@ function Navbar() {
     const [mostrarLogin, setMostrarLogin] = useState(false);
 
     return (
-        <nav className="
+        <nav
+            aria-label="Navegação principal"
+            className="
             fixed
             top-0
             left-0
@@ -78,9 +80,11 @@ function Navbar() {
                 {/* BOTÃO MOBILE */}
                 <button
                     onClick={() => setMenuAberto(!menuAberto)}
+                    aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+                    aria-expanded={menuAberto}
                     className="md:hidden text-white text-2xl"
                 >
-                    ☰
+                    {menuAberto ? "✕" : "☰"}
                 </button>
 
             </div>

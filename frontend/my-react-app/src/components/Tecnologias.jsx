@@ -124,6 +124,8 @@ function Tecnologias() {
                             >
 
                                 <Icone
+                                    role="img"
+                                    aria-label={`Ícone ${tecnologia.nome}`}
                                     className="
                                         text-5xl
                                         transition-transform

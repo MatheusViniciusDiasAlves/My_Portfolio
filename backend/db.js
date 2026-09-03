@@ -1,5 +1,5 @@
 // caminho explicito: sem isso so funciona se o cwd for a pasta backend
-require('dotenv').config({ path: __dirname + '/.env' });
+require('dotenv').config({ path: __dirname + '/.env', quiet: true });
 const mysql = require('mysql2/promise');
 
 module.exports = mysql.createPool({

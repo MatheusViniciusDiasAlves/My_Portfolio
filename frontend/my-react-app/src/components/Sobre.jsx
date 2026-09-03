@@ -20,7 +20,10 @@ function Sobre() {
                             <img
                                 src="/projetos/MatheusDias.png"
                                 alt="Matheus Dias"
+                                width="384"
+                                height="384"
                                 loading="lazy"
+                                decoding="async"
                                 className="w-full h-full object-cover object-center"
                             />
 

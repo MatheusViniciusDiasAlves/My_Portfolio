@@ -10,12 +10,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Sobre />
-      <Tecnologias />
-      <Projetos />
-      <Jornada />
-      <Contato />
+      <main>
+        <Hero />
+        <Sobre />
+        <Tecnologias />
+        <Projetos />
+        <Jornada />
+        <Contato />
+      </main>
     </>
   );
 }

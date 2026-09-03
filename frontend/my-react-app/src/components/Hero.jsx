@@ -60,6 +60,10 @@ function Hero() {
             <img
               src="/projetos/MatheusDias.png"
               alt="Foto de Matheus Vinicius"
+              width="384"
+              height="384"
+              fetchPriority="high"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
           </div>

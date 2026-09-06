@@ -37,12 +37,30 @@ function Navbar() {
                 justify-between
             ">
 
-                {/* LOGO */}
+                {/* LOGO — o mesmo cubo do favicon, aqui sem o fundo preto */}
                 <a
                     href="#inicio"
-                    className="text-xl font-bold text-white"
+                    className="flex items-center gap-2.5 text-xl font-bold text-white"
                 >
-                    Matheus<span className="text-slate-400">.</span>
+                    <svg
+                        viewBox="0 0 64 64"
+                        aria-hidden="true"
+                        className="h-7 w-7 shrink-0"
+                        fill="none"
+                        strokeWidth="4.5"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                    >
+                        <path
+                            d="M32 11 50 21.5 50 42.5 32 53 14 42.5 14 21.5Z"
+                            stroke="currentColor"
+                        />
+                        <path
+                            d="M32 32V53M32 32 50 21.5M32 32 14 21.5"
+                            stroke="#94a3b8"
+                        />
+                    </svg>
+                    Matheus Dias
                 </a>
 
 

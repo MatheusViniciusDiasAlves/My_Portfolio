@@ -59,13 +59,13 @@ function Hero() {
           <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-2 border-white/30 shadow-[0_0_40px_rgba(255,255,255,0.15)]">
 
             <img
-              src="/projetos/MatheusDias.png"
+              src="/perfil/matheus-formal.jpg"
               alt="Foto de Matheus Vinícius Dias Alves"
               width="384"
               height="384"
               fetchPriority="high"
               decoding="async"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-top"
             />
           </div>
 

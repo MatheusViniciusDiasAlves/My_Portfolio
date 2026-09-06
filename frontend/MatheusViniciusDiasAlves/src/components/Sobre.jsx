@@ -18,8 +18,8 @@ function Sobre() {
                         <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border border-white/20">
 
                             <img
-                                src="/projetos/MatheusDias.png"
-                                alt="Matheus Vinícius Dias Alves"
+                                src="/perfil/matheus-casual.jpg"
+                                alt="Matheus Vinícius Dias Alves sentado em uma arquibancada"
                                 width="384"
                                 height="384"
                                 loading="lazy"

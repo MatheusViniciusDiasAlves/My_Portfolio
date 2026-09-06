@@ -7,8 +7,12 @@ Siga na ordem: cada bloco depende do anterior.
 
 ## 1. Subir no Cloudflare Pages
 
-No painel do Cloudflare: **Workers & Pages → Create → Pages → Connect to Git**,
-escolha o repositório `My_Portfolio` e use exatamente estas configurações:
+O Cloudflare oferece dois tipos de projeto. Os dois funcionam; escolha um.
+
+### Opção A — Pages (mais simples, recomendada)
+
+**Workers & Pages → Create → aba Pages → Connect to Git**, escolha
+`My_Portfolio` e configure:
 
 | Campo | Valor |
 | --- | --- |
@@ -18,15 +22,39 @@ escolha o repositório `My_Portfolio` e use exatamente estas configurações:
 | Build output directory | `dist` |
 | **Root directory** | `frontend/MatheusViniciusDiasAlves` |
 
-> O **Root directory** é o campo que mais gera erro. Sem ele o Cloudflare procura
-> o `package.json` na raiz do repositório e o build falha.
+Endereço final: `https://<nome-do-projeto>.pages.dev`
 
-Ao criar o projeto você escolhe um nome — ele vira o endereço
-`https://<nome>.pages.dev`. **Anote esse endereço**, ele é usado no passo 2.
+### Opção B — Worker (se o painel só oferecer "Workers")
+
+Mesma tela, aba **Workers**. Configure:
+
+| Campo | Valor |
+| --- | --- |
+| **Root directory** | `frontend/MatheusViniciusDiasAlves` |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+
+O `wrangler.jsonc` já está no repositório. **Abra o arquivo e troque o `name`
+pelo nome exato do projeto que você criou no painel** — se ficar diferente, o
+deploy cria um Worker separado em vez de atualizar o seu.
+
+Endereço final: `https://<nome-do-worker>.<seu-subdominio>.workers.dev`
+
+### O erro mais comum
+
+> `Could not detect a directory containing static files`
+> ou `added 32 packages` no log de instalação
+
+Os dois sintomas significam a mesma coisa: o **Root directory** não foi
+preenchido. Sem ele o Cloudflare lê o `package.json` da raiz do repositório
+(que só tem o Tailwind), nunca instala o React nem roda o Vite, e por isso não
+existe pasta `dist` para publicar.
+
+**Anote o endereço que o Cloudflare gerar**, ele é usado no passo 2.
 
 Os arquivos `public/_redirects` e `public/_headers` já estão no repositório: o
 primeiro faz o fallback de SPA, o segundo define cache e cabeçalhos de segurança.
-O Cloudflare lê os dois automaticamente.
+O Cloudflare lê os dois automaticamente nos dois tipos de projeto.
 
 ---
 

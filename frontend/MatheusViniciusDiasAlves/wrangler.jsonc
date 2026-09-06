@@ -1,0 +1,16 @@
+{
+  // Configuração para publicar o site como Worker de assets estáticos.
+  // Só é usada se o projeto no Cloudflare for do tipo "Worker" (deploy via
+  // `npx wrangler deploy`). Num projeto do tipo "Pages" este arquivo é ignorado.
+  //
+  // IMPORTANTE: "name" precisa ser igual ao nome do projeto criado no painel do
+  // Cloudflare, senão o deploy cria um Worker separado.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio-matheus",
+  "compatibility_date": "2026-09-06",
+  "assets": {
+    "directory": "./dist",
+    // Qualquer rota desconhecida devolve o index.html, para o React rotear.
+    "not_found_handling": "single-page-application"
+  }
+}

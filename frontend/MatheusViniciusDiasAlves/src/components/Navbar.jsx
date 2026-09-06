@@ -1,10 +1,16 @@
 import { useState } from "react";
-import Login from "./Login";
+
+// O botão de Login está desativado no site publicado: o backend (Express +
+// MySQL, na pasta "backend") só roda localmente, então a tela dava
+// "Servidor fora do ar" para quem visitasse o site.
+// O componente Login.jsx continua no projeto. Para reativar, basta:
+//   1. publicar o backend e definir VITE_API_URL nas variáveis do Cloudflare;
+//   2. voltar o import, o estado "mostrarLogin", os dois botões e o
+//      {mostrarLogin && <Login ... />} no fim deste arquivo.
 
 function Navbar() {
 
     const [menuAberto, setMenuAberto] = useState(false);
-    const [mostrarLogin, setMostrarLogin] = useState(false);
 
     return (
         <nav
@@ -66,13 +72,6 @@ function Navbar() {
                     <a href="#contato" className="text-slate-300 hover:text-white transition">
                         Contato
                     </a>
-
-                    <button
-                        onClick={() => setMostrarLogin(true)}
-                        className="rounded-lg border border-slate-700 px-4 py-2 text-slate-300 hover:bg-slate-800 hover:text-white transition"
-                    >
-                        Login
-                    </button>
 
                 </div>
 
@@ -150,18 +149,9 @@ function Navbar() {
                         Contato
                     </a>
 
-                    <button
-                        onClick={() => { setMenuAberto(false); setMostrarLogin(true); }}
-                        className="text-left text-slate-300 hover:text-white"
-                    >
-                        Login
-                    </button>
-
                 </div>
 
             )}
-
-            {mostrarLogin && <Login aoFechar={() => setMostrarLogin(false)} />}
 
         </nav>
     );

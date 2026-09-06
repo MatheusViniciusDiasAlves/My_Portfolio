@@ -6,7 +6,7 @@
   // IMPORTANTE: "name" precisa ser igual ao nome do projeto criado no painel do
   // Cloudflare, senão o deploy cria um Worker separado.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "portfolio-matheus",
+  "name": "my-portfolio",
   "compatibility_date": "2026-09-06",
   "assets": {
     "directory": "./dist",

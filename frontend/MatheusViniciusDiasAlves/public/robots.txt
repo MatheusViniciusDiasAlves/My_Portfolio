@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfoliomatheusvinicius.netlify.app/sitemap.xml
+Sitemap: https://my-portfolio.matheusviniciusdiasalves.workers.dev/sitemap.xml

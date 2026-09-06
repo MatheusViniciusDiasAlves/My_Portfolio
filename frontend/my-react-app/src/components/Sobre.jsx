@@ -47,10 +47,7 @@ function Sobre() {
                         </p>
 
                         <p className="text-slate-300 mt-4 leading-relaxed">
-                            Atualmente estou focado principalmente no
-                            desenvolvimento Frontend, estudando JavaScript,
-                            React, HTML, CSS e outras tecnologias do
-                            desenvolvimento web.
+                            Atualmente atuo como  desenvolvedor full-stack trabalhando com React, Node.js, Express, MongoDB e outras tecnologias.
                         </p>
 
                         <p className="text-slate-300 mt-4 leading-relaxed">

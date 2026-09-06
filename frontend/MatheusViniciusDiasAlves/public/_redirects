@@ -1,3 +1,0 @@
-# Cloudflare Pages — SPA fallback.
-# Qualquer rota cai no index.html para o React assumir o roteamento.
-/*    /index.html   200

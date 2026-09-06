@@ -52,9 +52,15 @@ existe pasta `dist` para publicar.
 
 **Anote o endereço que o Cloudflare gerar**, ele é usado no passo 2.
 
-Os arquivos `public/_redirects` e `public/_headers` já estão no repositório: o
-primeiro faz o fallback de SPA, o segundo define cache e cabeçalhos de segurança.
-O Cloudflare lê os dois automaticamente nos dois tipos de projeto.
+O arquivo `public/_headers` (cache e cabeçalhos de segurança) já está no
+repositório e o Cloudflare lê automaticamente.
+
+> **Sobre o fallback de SPA:** no **Pages** ele se faz com um `_redirects`
+> contendo `/*  /index.html  200`. No **Worker** essa mesma regra é recusada
+> (`Infinite loop detected in this rule`) — lá o correto é o
+> `not_found_handling: "single-page-application"` do `wrangler.jsonc`, que já
+> está configurado. Por isso o repositório **não** tem `_redirects`; se você
+> migrar para Pages um dia, aí sim crie o arquivo.
 
 ---
 

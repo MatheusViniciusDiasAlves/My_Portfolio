@@ -22,13 +22,7 @@ function Projetos() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
 
                     {projetos.map((projeto) => (
-                        <ProjetoCard
-                            key={projeto.nome}
-                            nome={projeto.nome}
-                            descricao={projeto.descricao}
-                            tecnologias={projeto.tecnologias}
-                            imagem={projeto.imagem}
-                        />
+                        <ProjetoCard key={projeto.nome} projeto={projeto} />
                     ))}
 
                 </div>

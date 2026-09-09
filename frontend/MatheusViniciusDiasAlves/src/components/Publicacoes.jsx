@@ -171,6 +171,30 @@ function Publicacoes() {
                                 ))}
                             </div>
 
+                            {publicacao.links && (
+                                <div className="flex flex-wrap gap-4 mt-6">
+                                    {publicacao.links.map((link) => (
+                                        <a
+                                            key={link.url}
+                                            href={link.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="
+                                                text-white
+                                                font-semibold
+                                                underline
+                                                underline-offset-4
+                                                decoration-slate-600
+                                                hover:decoration-white
+                                                transition
+                                            "
+                                        >
+                                            {link.rotulo} →
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+
                         </article>
 
                     ))}

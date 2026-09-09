@@ -39,6 +39,9 @@ export const publicacoes = [
       "Educação básica",
       "Construcionismo",
     ],
+    links: [
+      { rotulo: "Assistir a apresentação", url: "https://youtu.be/a99T59TaZZA" },
+    ],
   },
 ];
 
@@ -58,7 +61,6 @@ export const premiacoes = [
         rotulo: "Ver no Instagram",
         url: "https://www.instagram.com/inovalandia/p/C0UzspEvH7Q/",
       },
-      { rotulo: "Assistir no YouTube", url: "https://youtu.be/a99T59TaZZA" },
     ],
   },
 ];

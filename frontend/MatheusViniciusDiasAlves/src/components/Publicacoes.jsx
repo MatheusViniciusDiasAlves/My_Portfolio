@@ -1,4 +1,4 @@
-import { ORCID, publicacoes, premiacoes } from "../data/publicacoes";
+import { publicacoes, premiacoes } from "../data/publicacoes";
 
 function Publicacoes() {
     return (
@@ -17,33 +17,6 @@ function Publicacoes() {
                     reconhecimentos que recebi pelo caminho.
                 </p>
 
-                <a
-                    href={ORCID}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="
-                        flex
-                        w-fit
-                        mx-auto
-                        mt-6
-                        items-center
-                        gap-2
-                        rounded-full
-                        border
-                        border-slate-700
-                        bg-slate-900/60
-                        px-4
-                        py-2
-                        text-sm
-                        text-slate-300
-                        hover:border-white/30
-                        hover:text-white
-                        transition
-                    "
-                >
-                    <span aria-hidden="true">🆔</span>
-                    ORCID 0009-0009-5914-1135
-                </a>
 
 
                 {/* PREMIAÇÕES */}

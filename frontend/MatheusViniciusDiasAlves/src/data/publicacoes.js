@@ -1,7 +1,4 @@
 // Produção científica e premiações.
-// ORCID: https://orcid.org/0009-0009-5914-1135
-
-export const ORCID = "https://orcid.org/0009-0009-5914-1135";
 
 export const publicacoes = [
   {

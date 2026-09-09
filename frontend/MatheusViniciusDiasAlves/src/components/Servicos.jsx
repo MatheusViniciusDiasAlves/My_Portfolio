@@ -114,20 +114,56 @@ function Servicos() {
                                     {servico.descricao}
                                 </p>
 
-                                <ul className="relative mt-6 space-y-3">
-                                    {servico.itens.map((item) => (
-                                        <li
-                                            key={item}
-                                            className="flex items-start gap-3 text-slate-200"
-                                        >
-                                            <HiCheck
-                                                aria-hidden="true"
-                                                className="mt-0.5 h-5 w-5 shrink-0 text-white"
-                                            />
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
+                                {/* Duas formas de listar: checklist do que está
+                                    incluído, ou tabela de serviço + preço */}
+                                {servico.itens && (
+                                    <ul className="relative mt-6 space-y-3">
+                                        {servico.itens.map((item) => (
+                                            <li
+                                                key={item}
+                                                className="flex items-start gap-3 text-slate-200"
+                                            >
+                                                <HiCheck
+                                                    aria-hidden="true"
+                                                    className="mt-0.5 h-5 w-5 shrink-0 text-white"
+                                                />
+                                                {item}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )}
+
+                                {servico.tabela && (
+                                    <>
+                                        <ul className="relative mt-6 divide-y divide-white/10 border-y border-white/10">
+                                            {servico.tabela.map((linha) => (
+                                                <li
+                                                    key={linha.servico}
+                                                    className="flex items-baseline justify-between gap-4 py-3"
+                                                >
+                                                    <span className="text-slate-200">
+                                                        {linha.servico}
+                                                    </span>
+                                                    <span
+                                                        className={`shrink-0 font-semibold ${
+                                                            linha.preco
+                                                                ? "text-white"
+                                                                : "text-sm font-normal text-slate-400"
+                                                        }`}
+                                                    >
+                                                        {linha.preco || "Sob consulta"}
+                                                    </span>
+                                                </li>
+                                            ))}
+                                        </ul>
+
+                                        {servico.rodape && (
+                                            <p className="relative mt-3 text-sm text-slate-400">
+                                                {servico.rodape}
+                                            </p>
+                                        )}
+                                    </>
+                                )}
 
                                 <div className="relative flex flex-wrap gap-2 mt-7">
                                     {servico.tecnologias.map((tecnologia) => (

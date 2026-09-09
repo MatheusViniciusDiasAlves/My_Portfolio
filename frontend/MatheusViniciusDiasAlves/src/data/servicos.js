@@ -1,3 +1,5 @@
+import { HiOutlineCodeBracket, HiOutlineWrenchScrewdriver } from "react-icons/hi2";
+
 // As duas frentes de trabalho. Atendimento como autônomo — quando o MEI sair,
 // dá para acrescentar CNPJ e horário de atendimento aqui.
 //
@@ -7,9 +9,11 @@
 export const servicos = [
   {
     marca: "MdDeveloper",
+    icone: HiOutlineCodeBracket,
     titulo: "Desenvolvimento de sites e sistemas",
+    chamada: "Do layout ao site publicado",
     descricao:
-      "Sites institucionais, landing pages e sistemas web sob medida, do layout ao deploy. Trabalho com React, Node.js e banco de dados, entregando o projeto publicado e pronto para usar.",
+      "Sites institucionais, landing pages e sistemas web sob medida. Trabalho com React, Node.js e banco de dados, entregando o projeto no ar e pronto para usar.",
     itens: [
       "Sites institucionais e landing pages",
       "Sistemas web sob medida",
@@ -24,9 +28,11 @@ export const servicos = [
   },
   {
     marca: "MdFormatting",
+    icone: HiOutlineWrenchScrewdriver,
     titulo: "Formatação e manutenção de computadores",
+    chamada: "5 anos de experiência em Rolândia e região",
     descricao:
-      "Cinco anos formatando, montando e consertando computadores em Rolândia e região. Atendo desde a formatação simples até diagnóstico de hardware e montagem de máquina do zero.",
+      "Da formatação simples ao diagnóstico de hardware e montagem de máquina do zero. Atendimento presencial em Rolândia, Londrina e região.",
     itens: [
       "Formatação e instalação de Windows",
       "Manutenção preventiva e corretiva",

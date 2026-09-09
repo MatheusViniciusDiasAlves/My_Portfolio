@@ -1,3 +1,4 @@
+import { HiCheck } from "react-icons/hi2";
 import { servicos } from "../data/servicos";
 
 function Servicos() {
@@ -18,96 +19,166 @@ function Servicos() {
                     região — e remotamente para projetos web.
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14">
 
-                    {servicos.map((servico) => (
+                    {servicos.map((servico) => {
 
-                        <article
-                            key={servico.marca}
-                            className="
-                                flex
-                                flex-col
-                                bg-slate-900/40
-                                backdrop-blur-sm
-                                border
-                                border-white/10
-                                rounded-2xl
-                                p-8
-                                hover:bg-slate-900/60
-                                hover:border-white/20
-                                transition-all
-                                duration-300
-                            "
-                        >
+                        const Icone = servico.icone;
 
-                            <span className="text-sm font-semibold tracking-wide text-slate-400">
-                                {servico.marca}
-                            </span>
-
-                            <h3 className="text-2xl md:text-3xl font-bold mt-2">
-                                {servico.titulo}
-                            </h3>
-
-                            <p className="text-slate-300 mt-4 leading-relaxed">
-                                {servico.descricao}
-                            </p>
-
-                            <ul className="mt-6 space-y-2">
-                                {servico.itens.map((item) => (
-                                    <li
-                                        key={item}
-                                        className="flex gap-3 text-slate-300"
-                                    >
-                                        <span aria-hidden="true" className="text-slate-500">
-                                            —
-                                        </span>
-                                        {item}
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="flex flex-wrap gap-2 mt-6">
-                                {servico.tecnologias.map((tecnologia) => (
-                                    <span
-                                        key={tecnologia}
-                                        className="
-                                            px-3
-                                            py-1
-                                            bg-slate-800/80
-                                            border
-                                            border-slate-700
-                                            rounded-full
-                                            text-sm
-                                            text-slate-200
-                                        "
-                                    >
-                                        {tecnologia}
-                                    </span>
-                                ))}
-                            </div>
-
-                            {/* mt-auto mantém os botões alinhados mesmo com textos de alturas diferentes */}
-                            <a
-                                href={servico.cta.href}
+                        return (
+                            <article
+                                key={servico.marca}
                                 className="
-                                    mt-auto
-                                    pt-8
-                                    self-start
-                                    text-white
-                                    font-semibold
-                                    underline
-                                    underline-offset-4
-                                    decoration-slate-600
-                                    hover:decoration-white
-                                    transition
+                                    group
+                                    relative
+                                    flex
+                                    flex-col
+                                    overflow-hidden
+                                    rounded-2xl
+                                    border
+                                    border-white/10
+                                    bg-slate-900/50
+                                    backdrop-blur-sm
+                                    p-8
+                                    transition-all
+                                    duration-300
+                                    hover:-translate-y-1
+                                    hover:border-white/25
+                                    hover:bg-slate-900/70
                                 "
                             >
-                                {servico.cta.rotulo} →
-                            </a>
 
-                        </article>
+                                {/* Brilho sutil no topo, só no hover — dá profundidade
+                                    sem introduzir cor nova na paleta do site */}
+                                <div
+                                    aria-hidden="true"
+                                    className="
+                                        pointer-events-none
+                                        absolute
+                                        -top-24
+                                        left-1/2
+                                        h-48
+                                        w-72
+                                        -translate-x-1/2
+                                        rounded-full
+                                        bg-white/5
+                                        blur-3xl
+                                        opacity-0
+                                        transition-opacity
+                                        duration-500
+                                        group-hover:opacity-100
+                                    "
+                                />
 
-                    ))}
+                                {/* CABEÇALHO: ícone + marca */}
+                                <div className="relative flex items-center gap-4">
+
+                                    <span className="
+                                        flex
+                                        h-14
+                                        w-14
+                                        shrink-0
+                                        items-center
+                                        justify-center
+                                        rounded-xl
+                                        border
+                                        border-white/15
+                                        bg-white/5
+                                        transition-colors
+                                        duration-300
+                                        group-hover:border-white/30
+                                        group-hover:bg-white/10
+                                    ">
+                                        <Icone
+                                            aria-hidden="true"
+                                            className="h-7 w-7 text-white"
+                                        />
+                                    </span>
+
+                                    <div>
+                                        <p className="text-lg font-bold tracking-tight">
+                                            {servico.marca}
+                                        </p>
+                                        <p className="text-sm text-slate-400">
+                                            {servico.chamada}
+                                        </p>
+                                    </div>
+
+                                </div>
+
+                                <h3 className="relative text-2xl font-bold mt-7 leading-snug">
+                                    {servico.titulo}
+                                </h3>
+
+                                <p className="relative text-slate-300 mt-3 leading-relaxed">
+                                    {servico.descricao}
+                                </p>
+
+                                <ul className="relative mt-6 space-y-3">
+                                    {servico.itens.map((item) => (
+                                        <li
+                                            key={item}
+                                            className="flex items-start gap-3 text-slate-200"
+                                        >
+                                            <HiCheck
+                                                aria-hidden="true"
+                                                className="mt-0.5 h-5 w-5 shrink-0 text-white"
+                                            />
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+
+                                <div className="relative flex flex-wrap gap-2 mt-7">
+                                    {servico.tecnologias.map((tecnologia) => (
+                                        <span
+                                            key={tecnologia}
+                                            className="
+                                                rounded-full
+                                                border
+                                                border-slate-700
+                                                bg-slate-800/70
+                                                px-3
+                                                py-1
+                                                text-sm
+                                                text-slate-200
+                                            "
+                                        >
+                                            {tecnologia}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                {/* mt-auto alinha os botões mesmo com textos de alturas diferentes */}
+                                <a
+                                    href={servico.cta.href}
+                                    className="
+                                        relative
+                                        mt-auto
+                                        pt-8
+                                    "
+                                >
+                                    <span className="
+                                        block
+                                        w-full
+                                        rounded-lg
+                                        bg-white
+                                        px-6
+                                        py-3
+                                        text-center
+                                        font-semibold
+                                        text-black
+                                        transition
+                                        hover:bg-slate-200
+                                    ">
+                                        {servico.cta.rotulo}
+                                    </span>
+                                </a>
+
+                            </article>
+                        );
+
+                    })}
 
                 </div>
 

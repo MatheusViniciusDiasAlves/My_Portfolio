@@ -2,9 +2,15 @@ import Navbar from "./components/Navbar";
 import Contato from "./components/Contato";
 import Hero from "./components/Hero";
 import Projetos from "./components/Projetos";
+import Publicacoes from "./components/Publicacoes";
+import Servicos from "./components/Servicos";
 import Sobre from "./components/Sobre";
-import Jornada from "./components/Jornada";
+import Experiencia from "./components/Experiencia";
 import Tecnologias from "./components/Tecnologias";
+
+// Ebooks está pronto mas desativado até existir o primeiro título.
+// Para ligar: descomente o import e o <Ebooks /> abaixo, e os links no Navbar.
+// import Ebooks from "./components/Ebooks";
 
 function App() {
   return (
@@ -13,9 +19,12 @@ function App() {
       <main>
         <Hero />
         <Sobre />
+        <Servicos />
         <Tecnologias />
         <Projetos />
-        <Jornada />
+        <Publicacoes />
+        <Experiencia />
+        {/* <Ebooks /> */}
         <Contato />
       </main>
     </>

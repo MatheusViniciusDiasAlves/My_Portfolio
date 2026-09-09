@@ -40,14 +40,14 @@ export const servicos = [
     descricao:
       "Da formatação simples ao diagnóstico de hardware e montagem de máquina do zero. Atendimento presencial em Rolândia, Londrina e região.",
     tabela: [
-      { servico: "Formatação com backup dos arquivos", preco: "" },
-      { servico: "Formatação simples", preco: "" },
-      { servico: "Limpeza interna e troca de pasta térmica", preco: "" },
-      { servico: "Upgrade de SSD ou memória RAM", preco: "" },
-      { servico: "Remoção de vírus e otimização", preco: "" },
-      { servico: "Montagem de PC completo", preco: "" },
+      { servico: "Formatação com backup dos arquivos", preco: "R$ 80" },
+      { servico: "Formatação simples", preco: "R$ 70" },
+      { servico: "Limpeza interna e troca de pasta térmica", preco: "R$ 60" },
+      { servico: "Remoção de vírus e otimização", preco: "R$ 30" },
+      { servico: "Montagem de PC completo", preco: "R$ 200" },
     ],
-    rodape: "Diagnóstico sem compromisso. Orçamento fechado antes do serviço.",
+    rodape:
+      "Outros serviços sob consulta. Diagnóstico sem compromisso e orçamento fechado antes de começar.",
     tecnologias: ["Windows", "Hardware", "Backup", "Redes"],
     cta: {
       rotulo: "Chamar no WhatsApp",

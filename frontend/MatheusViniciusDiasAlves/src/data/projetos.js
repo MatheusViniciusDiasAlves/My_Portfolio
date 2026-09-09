@@ -9,7 +9,6 @@ export const projetos = [
       "Projeto para um cliente real: a Igreja Batista Independente de Rolândia. Site institucional com apresentação dos ministérios, galeria, depoimentos e um formulário que abre a conversa direto no WhatsApp da igreja.",
     tecnologias: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     imagem: "/demonstrativos/ibi-rolandia.gif",
-    repo: "https://github.com/MatheusViniciusDiasAlves/IgrejaBatistaIndependenteRolandia",
     demo: "https://igrejabatistaindependenterol.netlify.app/",
   },
   {

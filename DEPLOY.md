@@ -136,6 +136,29 @@ Só depois que o Cloudflare estiver servindo o site corretamente:
 6. Em **Inspeção de URL**, cole a home e clique em **Solicitar indexação**.
    Há um limite de ~10 URLs por dia; para um site de página única, uma vez basta.
 
+### Validando o sitemap por fora
+
+Em validadores como o `xml-sitemaps.com/validate-xml-sitemap.html`, cole o
+endereço **do arquivo**, com `/sitemap.xml` no final:
+
+```
+https://portfolio.matheusviniciusdiasalves.workers.dev/sitemap.xml
+```
+
+Colar só a home (`.../`) devolve o erro *"Tipo de conteúdo do cabeçalho HTTP
+incorreto: text/html (esperado: application/xml)"* — o validador leu a página
+inicial, que é HTML mesmo, e não o sitemap. Não é defeito do site.
+
+Para conferir pelo terminal:
+
+```bash
+curl -I https://portfolio.matheusviniciusdiasalves.workers.dev/sitemap.xml
+```
+
+A resposta precisa trazer `content-type: application/xml`. Se vier `text/html`,
+o arquivo não chegou ao deploy (`dist/sitemap.xml`) e o Worker caiu no
+fallback de SPA, que devolve o `index.html` para rota desconhecida.
+
 ---
 
 ## 5. Google Business Profile

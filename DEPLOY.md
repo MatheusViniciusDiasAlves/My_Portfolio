@@ -1,15 +1,20 @@
-# Publicação — Cloudflare Pages + Google
+# Publicação — Cloudflare + Google
 
 Passo a passo para colocar o portfólio no ar e registrar no Google.
 Siga na ordem: cada bloco depende do anterior.
 
+> **Estado atual:** o site já está no ar como **Worker** (a opção B do passo 1),
+> em <https://portfolio.matheusviniciusdiasalves.workers.dev/>.
+> Os passos 1 a 3 já foram executados; ficam registrados aqui para o caso de
+> uma nova migração de host. O que ainda pode ser feito está no passo 4.
+
 ---
 
-## 1. Subir no Cloudflare Pages
+## 1. Subir no Cloudflare
 
 O Cloudflare oferece dois tipos de projeto. Os dois funcionam; escolha um.
 
-### Opção A — Pages (mais simples, recomendada)
+### Opção A — Pages (mais simples, mas **não** é a usada hoje)
 
 **Workers & Pages → Create → aba Pages → Connect to Git**, escolha
 `My_Portfolio` e configure:
@@ -24,7 +29,7 @@ O Cloudflare oferece dois tipos de projeto. Os dois funcionam; escolha um.
 
 Endereço final: `https://<nome-do-projeto>.pages.dev`
 
-### Opção B — Worker (se o painel só oferecer "Workers")
+### Opção B — Worker ← **é esta que está no ar**
 
 Mesma tela, aba **Workers**. Configure:
 
@@ -71,7 +76,8 @@ antigo da Netlify e o Google indexa o site errado.
 
 ```bash
 cd frontend/MatheusViniciusDiasAlves
-npm run seo:url -- https://SEU-PROJETO.pages.dev
+# Foi o que já se rodou para o endereço atual:
+npm run seo:url -- https://portfolio.matheusviniciusdiasalves.workers.dev
 ```
 
 O script atualiza de uma vez: `canonical`, `og:url`, `og:image`,
@@ -79,7 +85,7 @@ O script atualiza de uma vez: `canonical`, `og:url`, `og:image`,
 `lastmod`) e o `robots.txt`. Depois:
 
 ```bash
-git add -A && git commit -m "Aponta o SEO para o Cloudflare Pages" && git push
+git add -A && git commit -m "Aponta o SEO para o Cloudflare" && git push
 ```
 
 Confirme no site publicado com `Ctrl+U` que o `<link rel="canonical">` já mostra
@@ -104,7 +110,7 @@ Só depois que o Cloudflare estiver servindo o site corretamente:
 3. No Search Console, a propriedade antiga (`portfoliomatheusvinicius.netlify.app`)
    pode ser removida — ela vai parar de responder.
 
-> **O que você perde:** o Google trata `pages.dev` como um site novo. O histórico
+> **O que você perde:** o Google trata o endereço novo como um site novo. O histórico
 > de indexação do endereço da Netlify não é transferido, e sem o site antigo no ar
 > não dá para criar redirect 301. Na prática, a indexação recomeça do zero.
 > Um domínio próprio evita que isso volte a acontecer numa próxima troca de host —
@@ -115,26 +121,41 @@ Só depois que o Cloudflare estiver servindo o site corretamente:
 ## 4. Google Search Console
 
 1. Acesse <https://search.google.com/search-console> e adicione uma propriedade
-   do tipo **Prefixo do URL** com `https://SEU-PROJETO.pages.dev`.
+   do tipo **Prefixo do URL** com `https://portfolio.matheusviniciusdiasalves.workers.dev/`.
 
    > Propriedade do tipo *Domínio* exige registro DNS e não funciona em
-   > `pages.dev`, que é um domínio compartilhado. Use **Prefixo do URL**.
+   > `workers.dev`, que é um domínio compartilhado. Use **Prefixo do URL**.
+
+   > **Já feito.** A propriedade existe e está verificada — ela só aparece na
+   > lista do Search Console depois que a verificação passa.
 
 2. Escolha o método **Tag HTML**. Copie só o valor do atributo `content`.
 
-3. No `index.html` (linha ~17) há um bloco comentado. Descomente e cole:
+3. Cole o valor no `index.html`, na linha do
+   `<meta name="google-site-verification" ...>`:
 
    ```html
    <meta name="google-site-verification" content="SEU_CODIGO_AQUI" />
    ```
 
+   > O código é **gerado por propriedade**: o que verifica a propriedade da
+   > Netlify não serve para a do `workers.dev`. Ao trocar de host, pegue o
+   > código novo.
+
 4. Commit, push, espere o deploy do Cloudflare terminar e clique em **Verificar**.
 
-5. Verificado, vá em **Sitemaps** e envie: `sitemap.xml`
-   (esse caminho não consome a cota diária de indexação).
+5. Verificado, vá em **Sitemaps** e envie apenas o caminho: `sitemap.xml`
+   (esse envio não consome a cota diária de indexação).
+
+   > Se o status ficar em *"Não foi possível buscar"* nas primeiras horas, não é
+   > erro: o Google processa em fila. Confira no dia seguinte.
 
 6. Em **Inspeção de URL**, cole a home e clique em **Solicitar indexação**.
    Há um limite de ~10 URLs por dia; para um site de página única, uma vez basta.
+
+7. Espere. A indexação leva de dias a semanas, e ver
+   *"Descoberta — atualmente não indexada"* no começo é o comportamento normal
+   de site novo, não um defeito a corrigir.
 
 ### Validando o sitemap por fora
 
@@ -184,8 +205,8 @@ JSON-LD que já existe — e preencha com os dados reais:
     "@type": "ProfessionalService",
     "name": "NOME EXATO COMO ESTÁ NO PERFIL DA EMPRESA",
     "description": "Desenvolvimento de sites e sistemas web.",
-    "url": "https://SEU-PROJETO.pages.dev/",
-    "image": "https://SEU-PROJETO.pages.dev/perfil/matheus-formal.jpg",
+    "url": "https://portfolio.matheusviniciusdiasalves.workers.dev/",
+    "image": "https://portfolio.matheusviniciusdiasalves.workers.dev/perfil/matheus-formal.jpg",
     "email": "matheusviniciusdiasalves@gmail.com",
     "telephone": "+55SEUTELEFONE",
     "priceRange": "$$",

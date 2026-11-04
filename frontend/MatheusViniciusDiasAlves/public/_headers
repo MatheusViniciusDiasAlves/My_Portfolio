@@ -1,4 +1,5 @@
-# Cloudflare Pages — cabeçalhos por rota.
+# Cabeçalhos por rota (vale tanto para Cloudflare Pages quanto para o Worker
+# de assets estáticos, que também lê este arquivo).
 
 # Os arquivos em /assets têm hash no nome, então podem ser cacheados para sempre.
 /assets/*
@@ -11,6 +12,18 @@
   Cache-Control: public, max-age=2592000
 /demonstrativos/*
   Cache-Control: public, max-age=2592000
+
+# Arquivos de SEO: o validador de sitemap recusa qualquer coisa que não venha
+# como "application/xml", e com X-Content-Type-Options: nosniff ligado abaixo
+# o tipo precisa estar certo na origem. Deixar explícito evita depender do que
+# o Cloudflare deduz pela extensão.
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
 
 # O HTML nunca fica em cache, senão um deploy novo demora a aparecer.
 /index.html

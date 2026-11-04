@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { rotasDoMenu } from "../rotas";
 
 // O botão de Login está desativado no site publicado: o backend (Express +
 // MySQL, na pasta "backend") só roda localmente, então a tela dava
@@ -8,134 +10,109 @@ import { useState } from "react";
 //   2. voltar o import, o estado "mostrarLogin", os dois botões e o
 //      {mostrarLogin && <Login ... />} no fim deste arquivo.
 
-// Uma lista só alimenta o menu do desktop e o do celular.
-// Para ligar a seção de ebooks, descomente a linha correspondente.
-const links = [
-    { href: "#inicio", rotulo: "Início" },
-    { href: "#sobre", rotulo: "Sobre" },
-    { href: "#servicos", rotulo: "Serviços" },
-    { href: "#tecnologias", rotulo: "Tecnologias" },
-    { href: "#projetos", rotulo: "Projetos" },
-    { href: "#publicacoes", rotulo: "Publicações" },
-    { href: "#experiencia", rotulo: "Experiência" },
-    // { href: "#ebooks", rotulo: "Ebooks" },
-    { href: "#contato", rotulo: "Contato" },
-];
+function Logo({ className = "" }) {
+  return (
+    <svg
+      viewBox="0 0 64 64"
+      aria-hidden="true"
+      className={className}
+      fill="none"
+      strokeWidth="4.5"
+      strokeLinejoin="round"
+      strokeLinecap="round"
+    >
+      <path
+        d="M32 11 50 21.5 50 42.5 32 53 14 42.5 14 21.5Z"
+        stroke="currentColor"
+      />
+      <path d="M32 32V53M32 32 50 21.5M32 32 14 21.5" stroke="#94a3b8" />
+    </svg>
+  );
+}
 
 function Navbar() {
+  const [menuAberto, setMenuAberto] = useState(false);
 
-    const [menuAberto, setMenuAberto] = useState(false);
+  const fecharMenu = () => setMenuAberto(false);
 
-    return (
-        <nav
-            aria-label="Navegação principal"
-            className="
-            fixed
-            top-0
-            left-0
-            right-0
-            z-50
-            bg-black/40
-            backdrop-blur-md
-            border-b
-            border-white/10
-        ">
+  // No celular o menu ocupa a tela inteira; travar a rolagem do fundo evita
+  // a página correr por trás do painel.
+  useEffect(() => {
+    document.body.style.overflow = menuAberto ? "hidden" : "";
 
-            <div className="
-                max-w-6xl
-                mx-auto
-                px-6
-                py-4
-                flex
-                items-center
-                justify-between
-            ">
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuAberto]);
 
-                {/* LOGO — o mesmo cubo do favicon, aqui sem o fundo preto */}
-                <a
-                    href="#inicio"
-                    className="flex items-center gap-2.5 text-xl font-bold text-white"
-                >
-                    <svg
-                        viewBox="0 0 64 64"
-                        aria-hidden="true"
-                        className="h-7 w-7 shrink-0"
-                        fill="none"
-                        strokeWidth="4.5"
-                        strokeLinejoin="round"
-                        strokeLinecap="round"
-                    >
-                        <path
-                            d="M32 11 50 21.5 50 42.5 32 53 14 42.5 14 21.5Z"
-                            stroke="currentColor"
-                        />
-                        <path
-                            d="M32 32V53M32 32 50 21.5M32 32 14 21.5"
-                            stroke="#94a3b8"
-                        />
-                    </svg>
-                    Matheus Dias
-                </a>
+  const estiloLink = ({ isActive }) =>
+    [
+      "relative py-1 text-sm transition-colors",
+      "after:absolute after:-bottom-0.5 after:left-0 after:h-px after:bg-acento after:transition-all",
+      isActive
+        ? "text-white after:w-full"
+        : "text-slate-400 hover:text-white after:w-0 hover:after:w-full",
+    ].join(" ");
 
+  return (
+    <nav
+      aria-label="Navegação principal"
+      className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-md"
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+        <Link
+          to="/"
+          onClick={fecharMenu}
+          className="flex shrink-0 items-center gap-2.5 font-display text-lg font-bold text-white"
+        >
+          <Logo className="h-7 w-7 shrink-0" />
+          Matheus Dias
+        </Link>
 
-                {/* MENU DESKTOP — só a partir de lg, senão os 8 itens não cabem */}
-                <div className="hidden lg:flex items-center gap-6">
+        {/* MENU DESKTOP — a partir de md já cabem os seis itens */}
+        <div className="hidden items-center gap-7 md:flex">
+          {rotasDoMenu.map((rota) => (
+            <NavLink key={rota.caminho} to={rota.caminho} className={estiloLink}>
+              {rota.rotulo}
+            </NavLink>
+          ))}
+        </div>
 
-                    {links.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            className="text-slate-300 hover:text-white transition"
-                        >
-                            {link.rotulo}
-                        </a>
-                    ))}
+        <button
+          type="button"
+          onClick={() => setMenuAberto(!menuAberto)}
+          aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
+          aria-expanded={menuAberto}
+          className="-mr-2 p-2 text-2xl leading-none text-white md:hidden"
+        >
+          {menuAberto ? "✕" : "☰"}
+        </button>
+      </div>
 
-                </div>
-
-
-                {/* BOTÃO MOBILE */}
-                <button
-                    onClick={() => setMenuAberto(!menuAberto)}
-                    aria-label={menuAberto ? "Fechar menu" : "Abrir menu"}
-                    aria-expanded={menuAberto}
-                    className="lg:hidden text-white text-2xl"
-                >
-                    {menuAberto ? "✕" : "☰"}
-                </button>
-
-            </div>
-
-
-            {/* MENU MOBILE */}
-            {menuAberto && (
-
-                <div className="
-                    lg:hidden
-                    px-6
-                    pb-6
-                    flex
-                    flex-col
-                    gap-4
-                ">
-
-                    {links.map((link) => (
-                        <a
-                            key={link.href}
-                            href={link.href}
-                            onClick={() => setMenuAberto(false)}
-                            className="text-slate-300 hover:text-white"
-                        >
-                            {link.rotulo}
-                        </a>
-                    ))}
-
-                </div>
-
-            )}
-
-        </nav>
-    );
+      {/* MENU MOBILE */}
+      {menuAberto && (
+        <div className="border-t border-white/10 bg-black/95 px-6 pb-8 pt-2 md:hidden">
+          <div className="flex flex-col">
+            {rotasDoMenu.map((rota) => (
+              <NavLink
+                key={rota.caminho}
+                to={rota.caminho}
+                onClick={fecharMenu}
+                className={({ isActive }) =>
+                  [
+                    "border-b border-white/5 py-4 text-base transition-colors",
+                    isActive ? "text-acento" : "text-slate-300 hover:text-white",
+                  ].join(" ")
+                }
+              >
+                {rota.rotulo}
+              </NavLink>
+            ))}
+          </div>
+        </div>
+      )}
+    </nav>
+  );
 }
 
 export default Navbar;

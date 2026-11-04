@@ -3,23 +3,10 @@ import { servicos } from "../data/servicos";
 
 function Servicos() {
     return (
-        <section
-            id="servicos"
-            className="relative z-10 text-white px-6 py-24"
-        >
+        <section id="servicos" className="px-6 pb-24">
             <div className="max-w-6xl mx-auto">
 
-                <h2 className="text-4xl md:text-5xl font-bold text-center">
-                    Serviços
-                </h2>
-
-                <p className="text-slate-300 text-center mt-4 max-w-2xl mx-auto">
-                    Duas frentes de trabalho: desenvolvimento de software e
-                    manutenção de computadores. Atendo Rolândia, Londrina e
-                    região — e remotamente para projetos web.
-                </p>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
                     {servicos.map((servico) => {
 

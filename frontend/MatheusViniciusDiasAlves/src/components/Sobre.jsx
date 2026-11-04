@@ -1,16 +1,9 @@
 function Sobre() {
     return (
-        <section
-            id="sobre"
-            className="relative z-10 text-white px-6 py-24"
-        >
+        <section id="sobre" className="px-6 py-16">
             <div className="max-w-6xl mx-auto">
 
-                <h2 className="text-4xl md:text-5xl font-bold text-center">
-                    Sobre mim
-                </h2>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
                     {/* FOTO */}
                     <div className="flex justify-center">
@@ -32,28 +25,33 @@ function Sobre() {
                     </div>
 
                     {/* TEXTO */}
-                    {/* TODO (Matheus): esta é a sua história — revise e escreva com as suas palavras */}
                     <div>
 
-                        <h3 className="text-3xl font-bold">
-                            Olá! Eu sou o Matheus 👋
-                        </h3>
+                        <h2 className="font-display text-3xl font-bold tracking-tight">
+                            Prazer, eu sou o Matheus
+                        </h2>
 
                         <p className="text-slate-300 mt-6 leading-relaxed">
-                            Sou o Matheus Vinícius Dias Alves, estudante de
-                            Análise e Desenvolvimento de Sistemas, e estou
-                            construindo minha carreira na área de
-                            desenvolvimento de software.
+                            Sou estudante de Análise e Desenvolvimento de
+                            Sistemas e trabalho como Auxiliar de Tecnologia da
+                            Informação e desenvolvedor de sistemas. Moro em
+                            Rolândia e atendo também Londrina e região.
                         </p>
 
                         <p className="text-slate-300 mt-4 leading-relaxed">
-                            Atualmente atuo como  desenvolvedor full-stack trabalhando com React, Node.js, Express, MongoDB e outras tecnologias.
+                            No desenvolvimento, trabalho com React, Node.js,
+                            Express e MySQL — do layout até o projeto
+                            publicado e funcionando. Antes disso, foram cinco
+                            anos consertando e formatando computadores, o que
+                            me deu uma noção de infraestrutura que pouca gente
+                            tem começando pelo código.
                         </p>
 
                         <p className="text-slate-300 mt-4 leading-relaxed">
-                            Gosto de transformar ideias em interfaces,
-                            aprender novas tecnologias e colocar meus
-                            conhecimentos em prática através de projetos.
+                            Também sou bolsista de Iniciação Científica, com
+                            trabalhos publicados sobre Inteligência Artificial
+                            no Ensino Superior e sobre o uso do Scratch na
+                            educação básica.
                         </p>
 
                     </div>

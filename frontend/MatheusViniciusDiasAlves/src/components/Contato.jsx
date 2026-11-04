@@ -4,17 +4,11 @@ import { contato, linkWhatsApp } from "../data/contato";
 
 function Contato() {
   return (
-    <section id="contato" className="relative z-10 text-white px-6 py-24">
+    <section id="contato" className="px-6 pb-24">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-bold">Entre em contato</h2>
-
-        <p className="text-slate-300 mt-5 text-lg">
-          Gostou do meu trabalho ou quer conversar sobre algum projeto? Chame no
-          WhatsApp que respondo rápido.
-        </p>
 
         {/* WhatsApp em destaque: é o canal que mais converte para serviço */}
-        <div className="flex justify-center mt-10">
+        <div className="flex justify-center">
           <a
             href={linkWhatsApp(
               "Olá Matheus! Vim pelo seu portfólio e gostaria de conversar."
@@ -104,6 +98,37 @@ function Contato() {
         <p className="text-slate-400 mt-8 text-sm">
           {contato.email}
         </p>
+
+        {/* Responde as três perguntas que todo cliente faz antes de chamar.
+            A página terminava no e-mail e sobrava um vão preto até o rodapé. */}
+        <dl className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 text-left sm:grid-cols-3">
+          {[
+            {
+              termo: "Onde eu atendo",
+              texto:
+                "Presencialmente em Rolândia, Londrina e região. Projetos de site e sistema, para qualquer lugar.",
+            },
+            {
+              termo: "Como eu respondo",
+              texto:
+                "WhatsApp é o canal mais rápido. E-mail e LinkedIn também chegam, só demoram mais.",
+            },
+            {
+              termo: "Quanto custa",
+              texto:
+                "Diagnóstico sem compromisso e orçamento fechado antes de começar. Sem surpresa no fim.",
+            },
+          ].map((item) => (
+            <div key={item.termo} className="bg-slate-900/70 p-6">
+              <dt className="font-mono text-xs uppercase tracking-[0.14em] text-acento">
+                {item.termo}
+              </dt>
+              <dd className="mt-3 text-sm leading-relaxed text-slate-300">
+                {item.texto}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );

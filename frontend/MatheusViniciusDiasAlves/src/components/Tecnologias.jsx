@@ -30,6 +30,7 @@ import {
     TbBrandPowershell
 } from "react-icons/tb";
 import { FaWindows } from "react-icons/fa";
+import SecaoCabecalho from "./SecaoCabecalho";
 
 
 function Tecnologias() {
@@ -69,20 +70,15 @@ function Tecnologias() {
 
 
     return (
-        <section
-            id="tecnologias"
-            className="relative z-10 text-white px-6 py-24"
-        >
+        <section id="tecnologias" className="px-6 py-20">
 
             <div className="max-w-6xl mx-auto">
 
-                <h2 className="text-4xl md:text-5xl font-bold text-center">
-                    Tecnologias
-                </h2>
-
-                <p className="text-slate-300 text-center mt-4">
-                    Tecnologias que estou estudando e utilizando nos meus projetos.
-                </p>
+                <SecaoCabecalho
+                    faixa="Ferramentas"
+                    titulo="Tecnologias"
+                    apoio="O que uso no dia a dia, entre desenvolvimento, banco de dados, infraestrutura e design."
+                />
 
 
                 <div className="

@@ -1,8 +1,52 @@
 @import "tailwindcss";
 
+/* Sistema de design do site, num lugar só.
+   No Tailwind v4 o @theme gera as classes: --color-acento vira "text-acento",
+   "border-acento", "bg-acento"; --font-display vira "font-display". */
+@theme {
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Âmbar: o único ponto de cor do site, que é preto e cinza no resto.
+     Fica para as faixas em mono, o item ativo do menu e as bordas no hover —
+     sinalizar, não decorar. O branco continua sendo a cor de ação. */
+  --color-acento: #e4a948;
+}
+
 /* Fundo base preto: sem isso, o buraco da máscara do CubeBackground
    deixa vazar o branco da página (o "brilhão" no centro). */
 html,
 body {
   background-color: #000000;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* O Navbar é fixo: sem isto, pular para uma âncora esconde o título
+   atrás dele. */
+[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Foco visível para quem navega pelo teclado. O padrão do navegador some
+   sobre fundo preto. */
+:focus-visible {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

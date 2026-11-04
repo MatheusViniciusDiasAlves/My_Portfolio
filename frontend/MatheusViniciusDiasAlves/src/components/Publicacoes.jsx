@@ -2,21 +2,8 @@ import { publicacoes, premiacoes } from "../data/publicacoes";
 
 function Publicacoes() {
     return (
-        <section
-            id="publicacoes"
-            className="relative z-10 text-white px-6 py-24"
-        >
+        <section id="publicacoes" className="px-6 pb-24">
             <div className="max-w-5xl mx-auto">
-
-                <h2 className="text-4xl md:text-5xl font-bold text-center">
-                    Publicações e prêmios
-                </h2>
-
-                <p className="text-slate-300 text-center mt-4">
-                    Produção científica como bolsista de Iniciação Científica e
-                    reconhecimentos que recebi pelo caminho.
-                </p>
-
 
 
                 {/* PREMIAÇÕES */}

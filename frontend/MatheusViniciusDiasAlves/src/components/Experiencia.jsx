@@ -1,20 +1,16 @@
 import { experiencias, formacao } from "../data/experiencias";
+import SecaoCabecalho from "./SecaoCabecalho";
 
 function Experiencia() {
     return (
-        <section
-            id="experiencia"
-            className="relative z-10 text-white px-6 py-24"
-        >
+        <section id="experiencia" className="px-6 py-20">
             <div className="max-w-4xl mx-auto">
 
-                <h2 className="text-4xl md:text-5xl font-bold text-center">
-                    Experiência
-                </h2>
-
-                <p className="text-slate-300 text-center mt-4">
-                    Minha trajetória profissional, da mais recente para a mais antiga.
-                </p>
+                <SecaoCabecalho
+                    faixa="Trajetória"
+                    titulo="Experiência"
+                    apoio="Minha trajetória profissional, da mais recente para a mais antiga."
+                />
 
 
                 <ol className="relative mt-16 space-y-10">

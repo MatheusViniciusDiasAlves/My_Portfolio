@@ -12,7 +12,10 @@ import { fileURLToPath } from "node:url";
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), "..");
 
-const ARQUIVOS = ["index.html", "public/sitemap.xml", "public/robots.txt"];
+// O public/sitemap.xml não entra nesta lista: ele é gerado a cada build por
+// scripts/gerar-sitemap.mjs a partir do SITE em src/rotas.js. Trocar o
+// endereço lá dentro já resolve o sitemap inteiro.
+const ARQUIVOS = ["index.html", "src/rotas.js", "public/robots.txt"];
 
 function erro(mensagem) {
   console.error(`\n  ✗ ${mensagem}\n`);
@@ -48,7 +51,6 @@ if (atual === novo) {
   process.exit(0);
 }
 
-const hoje = new Date().toISOString().slice(0, 10);
 let totalTrocas = 0;
 
 for (const arquivo of ARQUIVOS) {
@@ -56,11 +58,6 @@ for (const arquivo of ARQUIVOS) {
   const antes = readFileSync(caminho, "utf8");
 
   let depois = antes.split(atual).join(novo);
-
-  // Aproveita e atualiza o lastmod do sitemap para hoje.
-  if (arquivo.endsWith("sitemap.xml")) {
-    depois = depois.replace(/<lastmod>[^<]*<\/lastmod>/, `<lastmod>${hoje}</lastmod>`);
-  }
 
   if (depois !== antes) {
     const trocas = antes.split(atual).length - 1;
@@ -74,3 +71,4 @@ for (const arquivo of ARQUIVOS) {
 
 console.log(`\n  ${atual}\n  → ${novo}\n`);
 console.log(`  ${totalTrocas} substituições. Confira com "git diff" e faça commit.\n`);
+console.log(`  O sitemap.xml se atualiza sozinho no próximo "npm run build".\n`);
